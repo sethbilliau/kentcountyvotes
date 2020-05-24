@@ -6,7 +6,7 @@ This app helps identify precincts more susceptible to down-ballot roll off by no
 In general, Democrats tended to lose votes down ballot while Republicans gained votes. These small margins can mean the difference between winning and losing in local elections like County Commission. 
 
 Main screen: 
-![Main](images/main.png)
+![Main](images_rm/main.png)
 
 Fields Displayed: 
-![Main](images/fields.png)
+![Main](images_rm/fields.png)
