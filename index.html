@@ -37,7 +37,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:7
-        }).fitBounds([[42.97015680521562,-85.91046938568522],[43.57108805342907,-84.40174520490578]]);
+        }).fitBounds([[42.40412095820367,-86.5556388442191],[43.3723798264095,-84.13976174750914]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -59,6 +59,14 @@
         map.addLayer(layer_OpenStreetMap_0);
         function pop_Tossup_1(feature, layer) {
             var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">KCC Dem Rolloff (votes):</th>\
+                        <td>' + (feature.properties['kccdroll_n'] !== null ? autolinker.link(feature.properties['kccdroll_n'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KCC Dem Rolloff (%):</th>\
+                        <td>' + (feature.properties['kccdroll_p'] !== null ? autolinker.link(feature.properties['kccdroll_p'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <th scope="row">Precinct: </th>\
                         <td>' + (feature.properties['data_for_gis_Precinct'] !== null ? autolinker.link(feature.properties['data_for_gis_Precinct'].toLocaleString()) : '') + '</td>\
@@ -207,6 +215,14 @@
         function pop_StrongDemocrat_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
+                        <th scope="row">KCC Dem Rolloff (votes):</th>\
+                        <td>' + (feature.properties['kccdroll_n'] !== null ? autolinker.link(feature.properties['kccdroll_n'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KCC Dem Rolloff (%):</th>\
+                        <td>' + (feature.properties['kccdroll_p'] !== null ? autolinker.link(feature.properties['kccdroll_p'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">Precinct:</th>\
                         <td>' + (feature.properties['data_for_gis_Precinct'] !== null ? autolinker.link(feature.properties['data_for_gis_Precinct'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -353,6 +369,14 @@
         map.addLayer(layer_StrongDemocrat_2);
         function pop_StrongRepublican_3(feature, layer) {
             var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">KCC Dem Rolloff (votes):</th>\
+                        <td>' + (feature.properties['kccdroll_n'] !== null ? autolinker.link(feature.properties['kccdroll_n'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KCC Dem Rolloff (%):</th>\
+                        <td>' + (feature.properties['kccdroll_p'] !== null ? autolinker.link(feature.properties['kccdroll_p'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <th scope="row">Precinct:</th>\
                         <td>' + (feature.properties['data_for_gis_Precinct'] !== null ? autolinker.link(feature.properties['data_for_gis_Precinct'].toLocaleString()) : '') + '</td>\
@@ -561,14 +585,20 @@
                 this._div = L.DomUtil.create('div',
                 'leaflet-control abstract');
                 this._div.id = 'abstract'
-
-                    abstract.show();
+                    this._div.setAttribute("onmouseenter", "abstract.show()");
+                    this._div.setAttribute("onmouseleave", "abstract.hide()");
+                    this.hide();
                     return this._div;
                 };
+                abstract.hide = function () {
+                    this._div.classList.remove("abstractUncollapsed");
+                    this._div.classList.add("abstract");
+                    this._div.innerHTML = 'i'
+                }
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Webmap of November 6, 2018, precinct-by-precinct election results in partisan races in Kent County, Michigan. Shading based on Democratic percentage of the vote for Governor (SR - less than 40%, Tossup - 40%-60%, SD - greater than 60%).  (Repo: https://github.com/sethbilliau/kentcountyvotes)';
+                    this._div.innerHTML = 'Webmap of November 6, 2018, precinct-by-precinct election results in partisan races in Kent County, Michigan. Shading based on Democratic percentage of the vote for Governor (SR - less than 40%, Tossup - 40%-60%, SD - greater than 60%). (Repo: https://github.com/sethbilliau/kentcountyvotes)';
             };
             abstract.addTo(map);
         var baseMaps = {};
