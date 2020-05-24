@@ -1,5 +1,5 @@
 # Kent County Election Results, 2018 General Election
-Website: https://sethbilliau.github.io/kentcountyvotes/#12/42.9410/-85.6649
+Website: https://sethbilliau.github.io/kentcountyvotes/#10/42.9971/-85.5382
 
 QGIS webmap of November 6, 2018, precinct-by-precinct election results in partisan races in Kent County, Michigan.
 
