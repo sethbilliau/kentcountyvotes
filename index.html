@@ -16,7 +16,7 @@
             margin: 0;
         }
         </style>
-        <title>Kent County, Michigan Election Results - November 6, 2018</title>
+        <title>Kent County, MI, Election Results - November 6, 2018</title>
     </head>
     <body>
         <div id="map">
@@ -231,7 +231,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: .5,
                 fillColor: 'rgba(150,150,150,1.0)',
                 interactive: true,
             }
@@ -281,7 +281,7 @@
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
         }
         map.createPane('pane_City_and_Township_2');
@@ -289,7 +289,7 @@
         map.getPane('pane_City_and_Township_2').style['mix-blend-mode'] = 'normal';
         var layer_City_and_Township_2 = new L.geoJson(json_City_and_Township_2, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_City_and_Township_2',
             layerName: 'layer_City_and_Township_2',
             pane: 'pane_City_and_Township_2',
@@ -305,7 +305,7 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>Kent County, Michigan Election Results - November 6, 2018</h2>';
+                this._div.innerHTML = '<h2>Kent County, MI, Election Results - November 6, 2018</h2>';
             };
             title.addTo(map);
         setBounds();
