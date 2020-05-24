@@ -281,7 +281,7 @@
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_City_and_Township_2');
@@ -289,7 +289,7 @@
         map.getPane('pane_City_and_Township_2').style['mix-blend-mode'] = 'normal';
         var layer_City_and_Township_2 = new L.geoJson(json_City_and_Township_2, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_City_and_Township_2',
             layerName: 'layer_City_and_Township_2',
             pane: 'pane_City_and_Township_2',
