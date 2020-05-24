@@ -16,7 +16,7 @@
             margin: 0;
         }
         </style>
-        <title>Kent County Precincts</title>
+        <title>Kent County, Michigan Election Results - November 6, 2018</title>
     </head>
     <body>
         <div id="map">
@@ -34,8 +34,8 @@
         <script src="data/City_and_Township_2.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[42.76162679599623,-85.90139424419608],[43.31915215594048,-84.92144043225103]]);
+            zoomControl:true, maxZoom:28, minZoom:7
+        }).fitBounds([[42.19589009569991,-86.56591476135655],[44.08963446163416,-82.99000940333399]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -48,7 +48,7 @@
             pane: 'pane_OpenStreetMap_0',
             opacity: 1.0,
             attribution: '',
-            minZoom: 1,
+            minZoom: 7,
             maxZoom: 28,
             minNativeZoom: 0,
             maxNativeZoom: 19
@@ -58,11 +58,11 @@
         function pop_2018_Voting_Precincts_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Precinct:</th>\
+                        <th scope="row">Precinct: </th>\
                         <td>' + (feature.properties['data_for_gis_Precinct'] !== null ? autolinker.link(feature.properties['data_for_gis_Precinct'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Registered Voters:</th>\
+                        <th scope="row">Registered Voters: </th>\
                         <td>' + (feature.properties['data_for_gis_RegisteredVoters'] !== null ? autolinker.link(feature.properties['data_for_gis_RegisteredVoters'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -158,15 +158,63 @@
                         <td>' + (feature.properties['data_for_gis_MIHouseOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MIHouseOther'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">KCC (D):</th>\
+                        <th scope="row">MI Board of Education (D):</th>\
+                        <td>' + (feature.properties['data_for_gis_MIBoardofEdDem'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdDem'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">MI Board of Education (R):</th>\
+                        <td>' + (feature.properties['data_for_gis_MIBoardofEdRep'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdRep'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">MI Board of Education (Other):</th>\
+                        <td>' + (feature.properties['data_for_gis_MIBoardofEdOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdOther'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_UofMRegentDem</th>\
+                        <td>' + (feature.properties['data_for_gis_UofMRegentDem'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentDem'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_UofMRegentRep</th>\
+                        <td>' + (feature.properties['data_for_gis_UofMRegentRep'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentRep'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_UofMRegentOther</th>\
+                        <td>' + (feature.properties['data_for_gis_UofMRegentOther'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentOther'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_MSUTrusteeDem</th>\
+                        <td>' + (feature.properties['data_for_gis_MSUTrusteeDem'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeDem'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_MSUTrusteeRep</th>\
+                        <td>' + (feature.properties['data_for_gis_MSUTrusteeRep'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeRep'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_MSUTrusteeOther</th>\
+                        <td>' + (feature.properties['data_for_gis_MSUTrusteeOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeOther'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_WSUGovernorDem</th>\
+                        <td>' + (feature.properties['data_for_gis_WSUGovernorDem'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorDem'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_WSUGovernorRep</th>\
+                        <td>' + (feature.properties['data_for_gis_WSUGovernorRep'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorRep'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_WSUGovernorOther</th>\
+                        <td>' + (feature.properties['data_for_gis_WSUGovernorOther'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorOther'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">data_for_gis_KCCDem</th>\
                         <td>' + (feature.properties['data_for_gis_KCCDem'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCDem'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">KCC (R):</th>\
+                        <th scope="row">data_for_gis_KCCRep</th>\
                         <td>' + (feature.properties['data_for_gis_KCCRep'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCRep'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">KCC (Other):</th>\
+                        <th scope="row">data_for_gis_KCCOther</th>\
                         <td>' + (feature.properties['data_for_gis_KCCOther'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCOther'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -183,7 +231,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .5,
+                fillOpacity: 1,
                 fillColor: 'rgba(150,150,150,1.0)',
                 interactive: true,
             }
@@ -257,10 +305,33 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>Kent County Precincts</h2>';
+                this._div.innerHTML = '<h2>Kent County, Michigan Election Results - November 6, 2018</h2>';
             };
             title.addTo(map);
         setBounds();
+        var i = 0;
+        layer_City_and_Township_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['CVTNAME'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['CVTNAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_City_and_Township_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
+        map.on("zoomend", function(){
+            resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
+        });
         </script>
     </body>
 </html>
