@@ -37,7 +37,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:7
-        }).fitBounds([[42.70942955299902,-86.177161021511],[43.31291631881271,-84.58196845882932]]);
+        }).fitBounds([[42.97015680521562,-85.91046938568522],[43.57108805342907,-84.40174520490578]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -185,7 +185,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .5,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(150,150,150,1.0)',
                 interactive: true,
             }
@@ -568,7 +568,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Webmap of November 6, 2018, precinct-by-precinct election results in partisan races in Kent County, Michigan. ';
+                    this._div.innerHTML = 'Webmap of November 6, 2018, precinct-by-precinct election results in partisan races in Kent County, Michigan. Shading based on Democratic percentage of the vote for Governor (SR - less than 40%, Tossup - 40%-60%, SD - greater than 60%). ';
             };
             abstract.addTo(map);
         var baseMaps = {};
