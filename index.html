@@ -35,7 +35,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:7
-        }).fitBounds([[42.1995390529088,-86.56591476135655],[44.09317209941067,-82.99000940333399]]);
+        }).fitBounds([[42.87455818172742,-85.87882940221476],[43.56127825260673,-84.58065907038784]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -158,63 +158,15 @@
                         <td>' + (feature.properties['data_for_gis_MIHouseOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MIHouseOther'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">MI Board of Education (D):</th>\
-                        <td>' + (feature.properties['data_for_gis_MIBoardofEdDem'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdDem'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">MI Board of Education (R):</th>\
-                        <td>' + (feature.properties['data_for_gis_MIBoardofEdRep'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdRep'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">MI Board of Education (Other):</th>\
-                        <td>' + (feature.properties['data_for_gis_MIBoardofEdOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MIBoardofEdOther'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_UofMRegentDem</th>\
-                        <td>' + (feature.properties['data_for_gis_UofMRegentDem'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentDem'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_UofMRegentRep</th>\
-                        <td>' + (feature.properties['data_for_gis_UofMRegentRep'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentRep'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_UofMRegentOther</th>\
-                        <td>' + (feature.properties['data_for_gis_UofMRegentOther'] !== null ? autolinker.link(feature.properties['data_for_gis_UofMRegentOther'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_MSUTrusteeDem</th>\
-                        <td>' + (feature.properties['data_for_gis_MSUTrusteeDem'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeDem'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_MSUTrusteeRep</th>\
-                        <td>' + (feature.properties['data_for_gis_MSUTrusteeRep'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeRep'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_MSUTrusteeOther</th>\
-                        <td>' + (feature.properties['data_for_gis_MSUTrusteeOther'] !== null ? autolinker.link(feature.properties['data_for_gis_MSUTrusteeOther'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_WSUGovernorDem</th>\
-                        <td>' + (feature.properties['data_for_gis_WSUGovernorDem'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorDem'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_WSUGovernorRep</th>\
-                        <td>' + (feature.properties['data_for_gis_WSUGovernorRep'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorRep'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_WSUGovernorOther</th>\
-                        <td>' + (feature.properties['data_for_gis_WSUGovernorOther'] !== null ? autolinker.link(feature.properties['data_for_gis_WSUGovernorOther'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">data_for_gis_KCCDem</th>\
+                        <th scope="row">KCC (D):</th>\
                         <td>' + (feature.properties['data_for_gis_KCCDem'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCDem'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">data_for_gis_KCCRep</th>\
+                        <th scope="row">KCC (R):</th>\
                         <td>' + (feature.properties['data_for_gis_KCCRep'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCRep'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">data_for_gis_KCCOther</th>\
+                        <th scope="row">KCC (Other):</th>\
                         <td>' + (feature.properties['data_for_gis_KCCOther'] !== null ? autolinker.link(feature.properties['data_for_gis_KCCOther'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -231,7 +183,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .5,
+                fillOpacity: 1,
                 fillColor: 'rgba(150,150,150,1.0)',
                 interactive: true,
             }
