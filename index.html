@@ -35,7 +35,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:7
-        }).fitBounds([[42.19589009569991,-86.56591476135655],[44.08963446163416,-82.99000940333399]]);
+        }).fitBounds([[42.1995390529088,-86.56591476135655],[44.09317209941067,-82.99000940333399]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -231,7 +231,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .5,
+                fillOpacity: 1,
                 fillColor: 'rgba(150,150,150,1.0)',
                 interactive: true,
             }
@@ -309,19 +309,6 @@
             };
             title.addTo(map);
         setBounds();
-        var i = 0;
-        layer_City_and_Township_2.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['CVTNAME'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['CVTNAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_City_and_Township_2'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
         resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
         map.on("zoomend", function(){
             resetLabels([layer_2018_Voting_Precincts_1,layer_City_and_Township_2]);
